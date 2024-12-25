@@ -1,0 +1,26 @@
+-- Create a database for the quiz
+CREATE DATABASE quiz_game;
+
+-- Use the database
+USE quiz_game;
+
+-- Create a table for storing quiz questions
+CREATE TABLE quiz_questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT NOT NULL,
+    option1 VARCHAR(255) NOT NULL,
+    option2 VARCHAR(255) NOT NULL,
+    option3 VARCHAR(255) NOT NULL,
+    option4 VARCHAR(255) NOT NULL,
+    answer INT NOT NULL
+);
+
+-- Insert sample questions
+INSERT INTO quiz_questions (question, option1, option2, option3, option4, answer)
+VALUES
+('What is the capital of France?', 'Berlin', 'Madrid', 'Paris', 'Rome', 3),
+('Which planet is known as the Red Planet?', 'Earth', 'Mars', 'Jupiter', 'Venus', 2),
+('Who wrote \'To Kill a Mockingbird\'?', 'Harper Lee', 'Mark Twain', 'J.K. Rowling', 'Jane Austen', 1);
+
+-- Fetch all questions (use this in your API/backend to serve data)
+SELECT * FROM quiz_questions;
